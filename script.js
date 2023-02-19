@@ -16,8 +16,16 @@ function select() {
 }
 
 function skillsEffect() {
-    let skills = document.getElementById("skills")
+    const skills = document.getElementById("skills")
+    const headerContainer = document.querySelector(".header-container")
+
     let skillsDistance = window.innerHeight - skills.getBoundingClientRect().top
+    if(skillsDistance > -400){
+        headerContainer.classList.add("header-container-solid")
+    } else {
+        headerContainer.classList.remove("header-container-solid")
+    }
+
     if(skillsDistance >= 300) {
         let skills = document.getElementsByClassName("progress")
         skills[0].classList.add("javascript")

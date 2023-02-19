@@ -32,13 +32,17 @@ h3 {
 }
 /* Menu */
 .header-container{
-    background: var(--secondary);
+    background: linear-gradient(var(--secondary) ,transparent);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 99;
 }
+.header-container-solid {
+    background-color: var(--secondary);
+    width: 100%;
+} 
 .header-container header {
     max-width: 1100px;
     margin: auto;
@@ -83,7 +87,7 @@ h3 {
 }
 /* Hero Section */
 .hero {
-    background: linear-gradient(to top, rgba(31, 29, 54, .8), rgba(31, 29, 54, 1)), url(img/hero-bg.jpg);
+    background: url(img/hero-bg.jpg);
     background-size: cover;
     height: 100vh;
     color: var(--body-text-color);
@@ -500,6 +504,7 @@ h3 {
 .projects .gallery {
     display: flex;  
     flex-wrap: wrap;
+    place-content: center;
 }
 .projects .gallery .project {
     position:  relative;
@@ -661,7 +666,7 @@ footer .up {
     font-size: 18px;
 }
 /*  Responsive */
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 800px) {
     nav {
         display: none;
     }
@@ -690,6 +695,13 @@ footer .up {
     }
     .about-me .row .col {
         width: fit-content;
+        margin: 0 auto;
+    }
+    .about-me .row .col h3 {
+        text-align: center;
+    }
+    .about-me .row .col .hobbies-container {
+        place-content: center;
     }
     .skills .row {
         display: block;
