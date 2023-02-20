@@ -167,7 +167,7 @@ h3 {
 }
 
 .about-me .row .col {
-   width: 50%; 
+   width: 50%;
 }
 .about-me .row .col h3 {
     font-size: 28px;
@@ -195,6 +195,7 @@ h3 {
 .about-me .row .col .hobbies-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .about-me .row .col .hobbies-container .hobby {
     width: 100px;
@@ -259,15 +260,50 @@ h3 {
 }
 .skills .row {
     display: flex;
+    gap: 20px;
 }
 .skills .row .col {
     width: 50%;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skills .row .col .skills-container {
+    max-width: 350px;
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 32, 46, .5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(40px);
+    padding: 16px 10px;
+    border-radius: 20px;
+}
+.skills .row .col .skills-container ul {
+    list-style: none;
+    font-size: 22px;
+    align-self: center;
+}
+.skills .row .col .skills-container ul li {
+    margin: 0 auto;
+}
+.skills .row .col .skills-container .skills-data-box .skills-data-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    gap: 10px 2px;
 }
 .skills .row .col h3 {
     font-size: 28px;
     font-family: 'Righteous';
     margin-bottom: 25px;
+}
+.skills .row .col .skill {
+    display: flex;
 }
 .skills .skill > span {
     font-weight: bold;
@@ -320,50 +356,6 @@ h3 {
 .skills .skill .react {
     width: 0%;
     animation: 2s react forwards;
-}
-@keyframes react {
-    0%{width: 0%;}
-    100%{width: 75%;}
-}
-.skills .skill .express {
-    width: 0%;
-    animation: 2s express forwards;
-}
-@keyframes express {
-    0%{width: 0%;}
-    100%{width: 81%;}
-}
-.skills .skill .golang {
-    width: 0%;
-    animation: 2s golang forwards;
-}
-@keyframes golang {
-    0%{width: 0%;}
-    100%{width: 55%;}
-}
-.skills .skill .comunication {
-    width: 0%;
-    animation: 2s comunication forwards;
-}
-@keyframes comunication {
-    0%{width: 0%;}
-    100%{width: 89%;}
-}
-.skills .skill .teamwork {
-    width: 0%;
-    animation: 2s teamwork forwards;
-}
-@keyframes teamwork {
-    0%{width: 0%;}
-    100%{width: 89%;}
-}
-.skills .skill .creativity {
-    width: 0%;
-    animation: 2s creativity forwards;
-}
-@keyframes creativity {
-    0%{width: 0%;}
-    100%{width: 75%;}
 }
 .skills .skill .dedication {
     width: 0%;
@@ -425,6 +417,9 @@ h3 {
     backdrop-filter: blur(40px);
     border-radius: 20px;
     position: relative;
+}
+.curriculum .row .item ul {
+    padding: 0 20px;
 }
 .curriculum .row .item h4 {
     font-size: 20px;
@@ -689,7 +684,7 @@ footer .up {
         padding: 10px 0;
     }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     .about-me .row {
         display: block;
     }
@@ -704,10 +699,17 @@ footer .up {
         place-content: center;
     }
     .skills .row {
-        display: block;
+        flex-direction: column;
     }
     .skills .row .col {
         width: 100%;
+    }
+    .skills .row .col .skills-container {
+        display: flex;
+        background: rgba(37, 32, 46, .5);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(40px);
     }
     .skills .row .col .skill-bar {
         width: 100%;
@@ -736,5 +738,11 @@ footer .up {
     }
     .contact .row .col {
         width: 100%;
+    }
+}
+@media screen and (max-width: 950px) {
+    .skills .row {
+        flex-direction: column;
+        align-items: center;
     }
 }
