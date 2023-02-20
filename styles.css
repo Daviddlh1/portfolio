@@ -556,10 +556,12 @@ h3 {
 }
 .contact .row {
     display: flex;
+    justify-content: center;
 }
 .contact .col {
-    width: 50%;
+    width: 100%;
     padding: 10px;
+    max-width: 600px;
     position: relative;
 }
 .contact .col input, .contact .col textarea {
