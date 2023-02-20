@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;200;300;400;600;800&display=swap');
 
 :root {
-    --primary: #1cb698;
-    --secondary: #1e2326;
-    --light-secondary: #252a2e;
-    --tipography: #fff;
+    --primary: #89b3d8;
+    --primary-neon: #d6e5f2;
+    --neon-effect-texts: 
+    0px 2px 16px var(--primary),
+    0px 2px 16px var(--primary),
+    0px 2px 16px var(--primary),
+    0px 2px 16px var(--primary);
+    --secondary: #181240;
+    --light-secondary: #1f2045;
+    --body-text-color: #fff;
 }
 
 *{
@@ -17,15 +23,26 @@ html{
     /* allows me to scroll when I click on a menu link */
     scroll-behavior: smooth;
 }
+h2 {
+    color: var(--primary-neon);
+    text-shadow: var(--neon-effect-texts);
+}
+h3 {
+    color: var(--body-text-color)
+}
 /* Menu */
 .header-container{
-    background: var(--secondary);
+    background: linear-gradient(var(--secondary) ,transparent);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 99;
 }
+.header-container-solid {
+    background-color: var(--secondary);
+    width: 100%;
+} 
 .header-container header {
     max-width: 1100px;
     margin: auto;
@@ -37,7 +54,8 @@ html{
 .header-container header .logo  a{
     font-family: 'Righteous';
     font-size: 36px;
-    color: var(--primary);
+    color: var(--primary-neon);
+    text-shadow: var(--neon-effect-texts);
     text-decoration: none;
 }
 .header-container header ul{
@@ -47,7 +65,7 @@ html{
 .header-container header nav ul li a {
     display: inline-block;
     text-align: none;
-    color: var(--tipography);
+    color: var(--body-text-color);
     margin: 0 15px;
     padding: 3px;
     transition: .5s;
@@ -56,11 +74,12 @@ html{
     -webkit-tap-highlight-color: transparent
 }
 .header-container header nav ul li a:hover {
-    color: var(--primary);
+    color: var(--primary-neon);
+    text-shadow: var(--neon-effect-texts);
 }
 .nav-responsive {
     background-color: var(--primary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -68,29 +87,31 @@ html{
 }
 /* Hero Section */
 .hero {
-    background: linear-gradient(to top, rgba(30, 35, 38, .8), rgba(30, 35, 38, 1)), url(img/fondo.jpg);
+    background: url(img/hero-bg.jpg);
     background-size: cover;
     height: 100vh;
-    color: var(--tipography);
+    color: var(--body-text-color);
     display: flex;
     align-items: center;
 }
 .hero .banner-content {
     padding: 20px;
-    background-color: var(--secondary);
+    background-color: transparent;
     max-width: 350px;
     margin: auto;
     margin-top: 100px;
     text-align: center;
     border-radius: 40px;
+    /* box-shadow: 0px 0px 5px 5px var(--primary); */
 }
 .hero .banner-content img {
     margin-top: 40px;
-    border: 10px solid var(--primary);
+    border: 2px solid var(--primary-neon);
     display: block;
     width: 80%;
     margin: auto;
     border-radius: 100%;
+    box-shadow: 0px 2px 16px 4px var(--primary), 0px 2px 16px 4px var(--primary);
 }
 .hero .banner-content h1 {
     margin-top: 41px;
@@ -102,10 +123,10 @@ html{
     font-weight: normal;
 }
 .hero .banner-content .social-media a {
-    color: var(--tipography);
+    color: var(--body-text-color);
     display: inline-block;
     text-decoration: none;
-    border: 1px solid var(--tipography);
+    border: 1px solid var(--body-text-color);
     border-radius: 100%;
     width: 42px;
     height: 42px;
@@ -115,11 +136,12 @@ html{
 }
 .hero .banner-content .social-media a:hover {
     background-color: var(--primary);
+    /* box-shadow: 0px 2px 16px 4px var(--primary), 0px 2px 16px 4px var(--primary); */
 }
 /* Hobbies Section */
 .about-me {
     background-color: var(--secondary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     padding: 50px 20px;
 }
 .about-me .section-content {
@@ -138,7 +160,6 @@ html{
     margin-bottom: 20px;
 }
 .about-me .section-content p span {
-    color: var(--primary);
     font-weight: bold;
 }
 .about-me .row {
@@ -146,7 +167,7 @@ html{
 }
 
 .about-me .row .col {
-   width: 50%; 
+   width: 50%;
 }
 .about-me .row .col h3 {
     font-size: 28px;
@@ -161,7 +182,8 @@ html{
 }
 .about-me .row .col ul li strong {
     display: inline-block;
-    color: var(--primary);
+    /* color: var(--primary-neon);
+    text-shadow: var(--neon-effect-texts); */
     width: 130px;
 }
 .about-me .row .col ul li span {
@@ -173,6 +195,7 @@ html{
 .about-me .row .col .hobbies-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .about-me .row .col .hobbies-container .hobby {
     width: 100px;
@@ -196,13 +219,13 @@ html{
 .about-me button {
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid var(--tipography);
+    border: 2px solid var(--body-text-color);
     width: fit-content;
     display: block;
     margin: 20px auto;
     padding: 10px 22px;
     font-size: 16px;
-    color: var(--tipography);
+    color: var(--body-text-color);
     position: relative;
     z-index: 10;
 }
@@ -222,7 +245,7 @@ html{
 /* Skills Section */
 .skills {
     background-color: var(--light-secondary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     padding: 50px 20px;
 }
 .skills .section-content {
@@ -237,15 +260,50 @@ html{
 }
 .skills .row {
     display: flex;
+    gap: 20px;
 }
 .skills .row .col {
     width: 50%;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skills .row .col .skills-container {
+    max-width: 350px;
+    width: 100%;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 32, 46, .5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(40px);
+    padding: 16px 10px;
+    border-radius: 20px;
+}
+.skills .row .col .skills-container ul {
+    list-style: none;
+    font-size: 22px;
+    align-self: center;
+}
+.skills .row .col .skills-container ul li {
+    margin: 0 auto;
+}
+.skills .row .col .skills-container .skills-data-box .skills-data-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    gap: 10px 2px;
 }
 .skills .row .col h3 {
     font-size: 28px;
     font-family: 'Righteous';
     margin-bottom: 25px;
+}
+.skills .row .col .skill {
+    display: flex;
 }
 .skills .skill > span {
     font-weight: bold;
@@ -299,50 +357,6 @@ html{
     width: 0%;
     animation: 2s react forwards;
 }
-@keyframes react {
-    0%{width: 0%;}
-    100%{width: 75%;}
-}
-.skills .skill .express {
-    width: 0%;
-    animation: 2s express forwards;
-}
-@keyframes express {
-    0%{width: 0%;}
-    100%{width: 81%;}
-}
-.skills .skill .golang {
-    width: 0%;
-    animation: 2s golang forwards;
-}
-@keyframes golang {
-    0%{width: 0%;}
-    100%{width: 55%;}
-}
-.skills .skill .comunication {
-    width: 0%;
-    animation: 2s comunication forwards;
-}
-@keyframes comunication {
-    0%{width: 0%;}
-    100%{width: 89%;}
-}
-.skills .skill .teamwork {
-    width: 0%;
-    animation: 2s teamwork forwards;
-}
-@keyframes teamwork {
-    0%{width: 0%;}
-    100%{width: 89%;}
-}
-.skills .skill .creativity {
-    width: 0%;
-    animation: 2s creativity forwards;
-}
-@keyframes creativity {
-    0%{width: 0%;}
-    100%{width: 75%;}
-}
 .skills .skill .dedication {
     width: 0%;
     animation: 2s dedication forwards;
@@ -362,7 +376,7 @@ html{
 /* Curriculum Section */
 .curriculum {
     background-color: var(--secondary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     padding: 50px 20px;
 }
 .curriculum .section-content {
@@ -397,8 +411,15 @@ html{
 .curriculum .row .item {
     padding: 25px;
     margin-bottom: 30px;
-    background-color: var(--light-secondary);
+    background: rgba(37, 32, 46, .5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
     position: relative;
+}
+.curriculum .row .item ul {
+    padding: 0 20px;
 }
 .curriculum .row .item h4 {
     font-size: 20px;
@@ -462,7 +483,7 @@ html{
 /* Projects Section */
 .projects {
     background-color: var(--light-secondary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     padding: 50px 20px;
 }
 .projects .section-content {
@@ -478,6 +499,7 @@ html{
 .projects .gallery {
     display: flex;  
     flex-wrap: wrap;
+    place-content: center;
 }
 .projects .gallery .project {
     position:  relative;
@@ -496,7 +518,7 @@ html{
     width: 100%;
     height: 100%;
     text-align: center;
-    background: linear-gradient(rgba(28,182,152, .8), rgba(28,182,152, .8));
+    background: linear-gradient(rgba(137, 179, 216, .8), rgba(137, 179, 216, .8));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -519,7 +541,7 @@ html{
 .contact {
     background-image: url(img/contact_bg.png);
     background-color: var(--secondary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     padding: 50px 0;
 }
 .contact .section-content {
@@ -534,10 +556,12 @@ html{
 }
 .contact .row {
     display: flex;
+    justify-content: center;
 }
 .contact .col {
-    width: 50%;
+    width: 100%;
     padding: 10px;
+    max-width: 600px;
     position: relative;
 }
 .contact .col input, .contact .col textarea {
@@ -547,19 +571,19 @@ html{
     border: none;
     margin-bottom: 20px;
     background-color: var(--light-secondary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     font-size: 18px;
 }
 .contact button {
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid var(--tipography);
+    border: 2px solid var(--body-text-color);
     width: fit-content;
     display: block;
     margin: 20px auto;
     padding: 10px 22px;
     font-size: 16px;
-    color: var(--tipography);
+    color: var(--body-text-color);
     position: relative;
     z-index: 10;
 }
@@ -600,7 +624,7 @@ html{
 }
 footer {
     background-color: var(--light-secondary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     padding: 50px 0 30px 0;
     text-align: center;
     position: relative;
@@ -610,10 +634,10 @@ footer .social-media {
     margin-bottom: 20px;
 }
 footer .social-media a {
-    color: var(--tipography);
+    color: var(--body-text-color);
     display: inline-block;
     text-decoration: none;
-    border: 1px solid var(--tipography);
+    border: 1px solid var(--body-text-color);
     border-radius: 100%;
     width: 42px;
     height: 42px;
@@ -629,7 +653,7 @@ footer .up {
     width: 50px;
     height: 50px;
     background-color: var(--primary);
-    color: var(--tipography);
+    color: var(--body-text-color);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -639,7 +663,7 @@ footer .up {
     font-size: 18px;
 }
 /*  Responsive */
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 800px) {
     nav {
         display: none;
     }
@@ -658,22 +682,36 @@ footer .up {
         display: block !important;
     }
     nav.responsive ul li {
-        border-bottom: 1px solid var(--tipography);
+        border-bottom: 1px solid var(--body-text-color);
         padding: 10px 0;
     }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     .about-me .row {
         display: block;
     }
     .about-me .row .col {
         width: fit-content;
+        margin: 0 auto;
+    }
+    .about-me .row .col h3 {
+        text-align: center;
+    }
+    .about-me .row .col .hobbies-container {
+        place-content: center;
     }
     .skills .row {
-        display: block;
+        flex-direction: column;
     }
     .skills .row .col {
         width: 100%;
+    }
+    .skills .row .col .skills-container {
+        display: flex;
+        background: rgba(37, 32, 46, .5);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(40px);
     }
     .skills .row .col .skill-bar {
         width: 100%;
@@ -702,5 +740,11 @@ footer .up {
     }
     .contact .row .col {
         width: 100%;
+    }
+}
+@media screen and (max-width: 950px) {
+    .skills .row {
+        flex-direction: column;
+        align-items: center;
     }
 }
