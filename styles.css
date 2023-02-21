@@ -246,6 +246,13 @@ h3 {
 }
 /* Skills Section */
 .skills {
+    /* background-image:
+      radial-gradient(var(--primary-neon) 1px, var(--secondary) 1px),
+      radial-gradient(var(--primary-neon) 1px, var(--secondary) 1px);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+    padding: 0;
+    margin: 0; */
     background-color: var(--light-secondary);
     background-image: url(img/skills_bg.png);
     background-position: center;
