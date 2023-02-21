@@ -247,7 +247,7 @@ h3 {
 /* Skills Section */
 .skills {
     background-color: var(--light-secondary);
-    background-image: url("img/skills_bg3.png");
+    background-image: url(img/skills_bg.png);
     background-position: center;
     background-size: cover;
     color: var(--body-text-color);
